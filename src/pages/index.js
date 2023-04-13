@@ -3,7 +3,6 @@ import SongList from "components/SongList";
 import env from "utils/env";
 
 const Home = ({ songs }) => {
-  console.log(songs);
   return (
     <div>
       <SongList data={songs} />
