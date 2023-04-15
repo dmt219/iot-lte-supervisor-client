@@ -2,12 +2,14 @@ import React from "react";
 import SongList from "components/SongList";
 import Supervisor from "components/Supervisor";
 import env from "utils/env";
+import GradientDisplay from "../components/GradientDisplay";
 
 const Home = ({ songs, data }) => {
   return (
     <div>
-      <SongList data={songs} />
+      {/* <SongList data={songs} /> */}
       <Supervisor data={data}/>
+      <GradientDisplay />
     </div>
   );
 };
@@ -15,13 +17,12 @@ const Home = ({ songs, data }) => {
 export default Home;
 
 export async function getStaticProps() {
-  const res = await fetch(`${env.apiEndpoint}/songs`);
-  const songs = await res.json();
+  // const res = await fetch(`${env.apiEndpoint}/songs`);
+  // const songs = await res.json();
   const data = { pci: 1, rsrp: Math.floor(Math.random() * 10), rsrq: Math.floor(Math.random() * 10) }
-
   return {
     props: {
-      songs,
+      // songs,
       data
     },
   };
