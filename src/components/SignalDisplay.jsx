@@ -2,7 +2,7 @@ import { React, useState, useEffect, useRef, use } from "react";
 import styles from "styles/SignalDisplay.module.css";
 
 const RangeSlider = ({ name, val, real }) => {
-  const MAX_VALUE = 255;
+  const MAX_VALUE = name == "RSRP" ? 97 : 34;
 
   // This is not ideal just because it needs knowledge of how wide the track is.
   // Ideally I'd like to do this more dynamically so it works with any track length,
