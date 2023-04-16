@@ -12,7 +12,7 @@ const Home = () => {
         content="upgrade-insecure-requests"
       />
       <div className="h-screen flex flex-col overflow-hidden">
-        <MainHeader />
+        {/* <MainHeader /> */}
         <div className="flex-1 text-center mb-4">
           <h1>IoT LTE Supervisor</h1>
         </div>
