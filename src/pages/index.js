@@ -6,6 +6,8 @@ import WidgetGrid from "components/WidgetGrid";
 const Home = () => {
   return (
     <>
+      <title>Team Newbees</title>
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       <div className="h-screen flex flex-col overflow-hidden">
         <MainHeader />
         <div className="flex-1 text-center mb-4">
