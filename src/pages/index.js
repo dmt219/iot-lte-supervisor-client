@@ -1,25 +1,20 @@
 import React from "react";
-import SongList from "components/SongList";
 import env from "utils/env";
+import MainHeader from "components/MainHeader";
+import WidgetGrid from "components/WidgetGrid";
 
-const Home = ({ songs }) => {
-  console.log(songs);
+const Home = () => {
   return (
-    <div>
-      <SongList data={songs} />
-    </div>
+    <>
+      <div className="h-screen flex flex-col overflow-hidden">
+        <MainHeader />
+        <div className="flex-1 text-center mb-4">
+          <h1>IoT LTE Supervisor</h1>
+        </div>
+        <WidgetGrid />
+      </div>
+    </>
   );
 };
 
 export default Home;
-
-export async function getStaticProps() {
-  const res = await fetch(`${env.apiEndpoint}/songs`);
-  const songs = await res.json();
-
-  return {
-    props: {
-      songs,
-    },
-  };
-}
