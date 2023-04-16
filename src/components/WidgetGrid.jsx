@@ -5,6 +5,7 @@ import CurrentCellInfo from "components/CurrentCellInfo";
 import HistoricalData from "components/HistoricalData";
 import { useEffect, useState } from "react";
 import SimAlert from "components/SimAlert";
+import SignalDisplay from "components/SignalDisplay";
 
 export default function WidgetGrid() {
   const [simData, setSimData] = useState({ ts: [], rsrp_dbm: [], rsrq_db: [] });
@@ -26,7 +27,7 @@ export default function WidgetGrid() {
 
     const intervalId = setInterval(() => {
       fetchData();
-    }, 5000);
+    }, 60000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -45,6 +46,11 @@ export default function WidgetGrid() {
       <Col>
         <CardSample title="Current Cell Info">
           <CurrentCellInfo />
+        </CardSample>
+      </Col>
+      <Col>
+        <CardSample title="Current Signal">
+          <SignalDisplay />
         </CardSample>
       </Col>
     </Row>
