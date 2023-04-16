@@ -5,3 +5,11 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+// const path = require('src/styles')
+
+// module.exports = {
+//   sassOptions: {
+//     includePaths: [path.join(__dirname, 'styles')],
+//   },
+// }

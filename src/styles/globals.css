@@ -24,3 +24,14 @@ a {
     background: black;
   }
 }
+
+:root {
+	--yellow: #ffd100;
+	--orange: #ff6a13;
+	--darkGray: #53565a;
+	--midGray: #888b8d;
+	--white: #fff;
+	--roundness: 1.25em;
+  --red: red;
+  --green: green;
+}

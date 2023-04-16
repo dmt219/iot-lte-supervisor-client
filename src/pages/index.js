@@ -2,14 +2,13 @@ import React from "react";
 import SongList from "components/SongList";
 import Supervisor from "components/Supervisor";
 import env from "utils/env";
-import GradientDisplay from "../components/GradientDisplay";
+import SignalDisplay from "../components/SignalDisplay";
 
 const Home = ({ songs, data }) => {
   return (
     <div>
       {/* <SongList data={songs} /> */}
       <Supervisor data={data}/>
-      <GradientDisplay />
     </div>
   );
 };
