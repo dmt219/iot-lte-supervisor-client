@@ -11,9 +11,7 @@ export default function CurrentCellInfo() {
   });
   useEffect(() => {
     async function fetchData() {
-      await fetch(
-        "http://iotltesupervisor-env.eba-qgmwipr2.ap-southeast-1.elasticbeanstalk.com/get_last_cell/"
-      )
+      await fetch("https://lte-supervisor.com/get_last_cell/")
         .then((res) => res.json())
         .then(function (data) {
           setCellInfo({

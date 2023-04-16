@@ -7,9 +7,12 @@ import Head from "next/head";
 const Home = () => {
   return (
     <>
-      <Head>
-        <title>IoT LTE Supervisor</title>
-      </Head>
+      <Head></Head>
+      <title>IoT LTE Supervisor</title>
+      <meta
+        http-equiv="Content-Security-Policy"
+        content="upgrade-insecure-requests"
+      />
       <div className="h-screen flex flex-col overflow-hidden">
         {/* <MainHeader /> */}
         <div className="flex-1 text-center mb-4">

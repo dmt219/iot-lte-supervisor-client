@@ -11,9 +11,7 @@ export default function WidgetGrid() {
 
   useEffect(() => {
     async function fetchData() {
-      await fetch(
-        "http://iotltesupervisor-env.eba-qgmwipr2.ap-southeast-1.elasticbeanstalk.com/get_1hr_signals/"
-      )
+      await fetch("https://lte-supervisor.com/get_1hr_signals/")
         .then((res) => res.json())
         .then(function (data) {
           setSimData({
