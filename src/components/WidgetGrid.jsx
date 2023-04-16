@@ -6,6 +6,7 @@ import HistoricalData from "components/HistoricalData";
 import { useEffect, useState } from "react";
 import SimAlert from "components/SimAlert";
 import SignalDisplay from "components/SignalDisplay";
+import CellLog from "components/CellLog";
 
 export default function WidgetGrid() {
   const [simData, setSimData] = useState({ ts: [], rsrp_dbm: [], rsrq_db: [] });
@@ -51,6 +52,11 @@ export default function WidgetGrid() {
       <Col>
         <CardSample title="Current Signal">
           <SignalDisplay />
+        </CardSample>
+      </Col>
+      <Col>
+        <CardSample title="Cells Log">
+          <CellLog />
         </CardSample>
       </Col>
     </Row>
