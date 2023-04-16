@@ -3,8 +3,8 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import CurrentCellInfo from "components/CurrentCellInfo";
 import HistoricalData from "components/HistoricalData";
-import { useEffect, useState} from "react";
-import SimAlert from 'components/SimAlert';
+import { useEffect, useState } from "react";
+import SimAlert from "components/SimAlert";
 
 export default function WidgetGrid() {
   const [simData, setSimData] = useState({ ts: [], rsrp_dbm: [], rsrq_db: [] });
@@ -48,9 +48,6 @@ export default function WidgetGrid() {
         <CardSample title="Current Cell Info">
           <CurrentCellInfo />
         </CardSample>
-      </Col>
-      <Col>
-        <CardSample title="SimAlert" />
       </Col>
     </Row>
   );

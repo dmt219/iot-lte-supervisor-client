@@ -9,10 +9,6 @@ const Home = () => {
     <>
       <Head>
         <title>IoT LTE Supervisor</title>
-        <meta
-          http-equiv="Content-Security-Policy"
-          content="upgrade-insecure-requests"
-        />
       </Head>
       <div className="h-screen flex flex-col overflow-hidden">
         {/* <MainHeader /> */}
