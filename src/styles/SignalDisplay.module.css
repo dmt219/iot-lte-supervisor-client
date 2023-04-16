@@ -1,4 +1,4 @@
-.gradient {
+/* .gradient {
   height: 50px;
   width: 70%;
   background: linear-gradient(
@@ -15,14 +15,14 @@
   padding-left: 4px;
   padding-right: 4px;
   border-radius: 4px;
-}
+} */
 
 .slider, .slider:after, .slider:before {
-	box-sizing: border-box;
 	color: var(--darkGray);
+  font-size: 0.7rem
 }
 
-.slider { 
+/* .slider { 
   @media (min-width: 440px) {
     font-size: .75rem;
 	}
@@ -30,13 +30,12 @@
 	@media (min-width: 600px) {
     font-size: 1rem;
 	}
-} 
+}  */
 
 .slider {
-  padding: 2rem 2rem 4rem;
   display: flex;
   flex-direction: column;
-  max-width: 37.5em;
+  width: 30em;
   /* margin: auto; */
 }
 .slider input {
@@ -47,7 +46,7 @@
 }
 .slider .outer {
   box-shadow: 0 0 0 0.1em var(--white), 0 0 0 0.2em var(--orange) !important;
-  /* Alternate focus style on the emoji button */
+  /* Alternate f  ocus style on the emoji button */
 }
 .slider > label {
   width: 100%;
@@ -56,8 +55,7 @@
   padding: 0 0 0.5em;
 }
 .slider .outer {
-  grid-row: 0.6666666667;
-  grid-column: 0.5;
+  top: -2rem;
   width: 100%;
   border-radius: var(--roundness);
   margin: auto;
@@ -81,11 +79,11 @@
   transform-origin: left;
 }
 .slider .emoji {
-  margin-top: -0.2em;
-  margin-left: -0.2em;
+  margin-top: -0.4em;
+  margin-left: -0.4em;
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  width: 0.7em;
+  height: 0.7em;
   transition: all 0.15s cubic-bezier(0.5, 0.4, 0.2, 1);
   border-radius: var(--roundness);
   text-align: right;

@@ -2,31 +2,23 @@ import { React, useState, useEffect, useRef, use } from "react";
 import styles from '../styles/SignalDisplay.module.css'
 // import "../styles/variables.module.scss"
 
-const RangeSlider = (signal, signalValueIndex) => {
+const RangeSlider = ({name, signal}) => {
 	const [val, setVal] = useState(0);
 	const MAX_VALUE = 255;
-	const SIGNAL_RSRP = "RSRP"
-	const SIGNAL_RSRQ = "RSRQ"
 
 	useEffect(() => {
 		const intervalID = setInterval(() => {
 			setVal(Math.floor(Math.random() * MAX_VALUE))
+			// setVal(signal)
 		}, 1000)
 		return function cleanup() { clearInterval(intervalID) }
 	}, [])
-
-	const getSignalValue = (signal, valIndex) => {
-		const rsrp_dBm = valIndex - 140
-  		const rsrq_dB = valIndex * 0.5 - 19.5
-		if (signal == SIGNAL_RSRP) return `${rsrp_dBm} + dBm`
-		if (signal == SIGNAL_RSRQ) return `${rsrq_dB} + dB`
-	}
 
 	// This is not ideal just because it needs knowledge of how wide the track is.
 	// Ideally I'd like to do this more dynamically so it works with any track length,
 	// but for the sake of smooth animations I kept it like this.
 	const getPlacement = () => {
-		return (val * 5.2) + `%`;
+		return (val / MAX_VALUE * 12) + `em`;
 	};
 
 	// This is kinda hacky, but if the background is rounded at too low a value, you can see it peeking out from behind the emoji.
@@ -69,7 +61,7 @@ const RangeSlider = (signal, signalValueIndex) => {
 						color: getHappinessColor()
 					}}
 				>
-					Happiness: {val + ' '}
+					{name}: {val}
 					{/* getSignalValue(signal, val) */}
 				</label>
 
@@ -107,7 +99,7 @@ const RangeSlider = (signal, signalValueIndex) => {
 	);
 }
 
-const SignalDisplay = (signal) => {
+const SignalDisplay = ({name, signal}) => {
 	
 	//const [listSignals, setListSignals] = useState({})
 	//const [arraySignals, setArraySignals] = useState([])
@@ -130,7 +122,7 @@ const SignalDisplay = (signal) => {
 	// }, [listSignals])
 
 	return (
-		<RangeSlider signal = {signal}/>
+		<RangeSlider name = {name} signal = {signal}/>
 	);
 }
 
